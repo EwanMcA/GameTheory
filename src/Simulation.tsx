@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
-const useSimulation = (numNodes = 50, linkDistance = 50, step = 0) => {
+const useSimulation = (numNodes = 50, linkDistance = 50, width = 1200, height = 600, step = 0) => {
   const [nodes, setNodes] = useState([]);
 
   useEffect(() => {
     const newNodes = Array.from({ length: numNodes }, (_, i) => ({
       id: i,
-      x: Math.random() * 1200, // TODO fix magic numbers
-      y: Math.random() * 500,
+      x: Math.random() * width,
+      y: Math.random() * height,
       nextMove: Math.random() < 0.5,
       links: [],
     }));

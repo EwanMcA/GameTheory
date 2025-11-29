@@ -5,14 +5,14 @@ import './App.css'
 
 const App = () => {
   const [step, setStep] = useState(0);
-  const nodes = useSimulation(100, 100, step);
+  const nodes = useSimulation(200, 100, 1400, 700, step);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setStep((s) => s + 1);
     }, 1000);
     return () => clearInterval(interval);
-  }, [step]);
+  }, []);
 
   return (
     <>

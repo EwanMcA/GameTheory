@@ -1,6 +1,6 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, memo } from "react";
 
-const CanvasWrapper = ({ nodes, step }) => {
+const CanvasWrapper = memo(({ nodes, step }) => {
   const canvasRef = useRef();
 
   useEffect(() => {
@@ -28,15 +28,15 @@ const CanvasWrapper = ({ nodes, step }) => {
     };
 
     draw();
-  }, [step]);
+  }, [step, nodes]);
 
   return (
     <canvas
       ref={canvasRef}
-      width={1200}
-      height={600}
+      width={1400}
+      height={700}
     />
   );
-}
+});
 
 export default CanvasWrapper;
