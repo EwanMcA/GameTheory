@@ -8,7 +8,6 @@ const CanvasWrapper = memo(({ nodes, step }) => {
     const ctx = canvas.getContext("2d");
 
     const draw = () => {
-      console.log('draw');
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       nodes.forEach((n) => {
@@ -34,7 +33,7 @@ const CanvasWrapper = memo(({ nodes, step }) => {
     <canvas
       ref={canvasRef}
       width={1400}
-      height={700}
+      height={600}
     />
   );
 });
